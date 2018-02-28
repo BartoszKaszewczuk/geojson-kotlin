@@ -1,10 +1,14 @@
+import org.jetbrains.kotlin.gradle.dsl.Coroutines
 
-dependencies {
-    compile "org.jetbrains.kotlinx:kotlinx-coroutines-core-common:$coroutines_version"
+plugins {
+    id("kotlin-platform-common")
 }
 
 kotlin {
-    experimental {
-        coroutines "enable"
-    }
+    experimental.coroutines = Coroutines.ENABLE
+}
+
+dependencies {
+    compile("org.jetbrains.kotlinx:kotlinx-coroutines-core-common:0.22.1")
+    compile("org.jetbrains.kotlin:kotlin-stdlib-common:1.2.20")
 }
